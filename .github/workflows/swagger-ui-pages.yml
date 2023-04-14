@@ -25,7 +25,7 @@ jobs:
       #   uses: actions/download-artifact@v3
       #   with:
       #     name: spec-file
-      - name: Generate Swagger UI
+      - name: Generate Swagger UI 
         uses: Legion2/swagger-ui-action@v1
         with:
           output: swagger-ui
