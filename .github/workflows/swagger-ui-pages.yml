@@ -17,7 +17,10 @@ jobs:
     # needs: upload-openapi-spec
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+          token: ${{ secrets.ACCESS_TOKEN }}
       # - name: Download openapi.json
       #   uses: actions/download-artifact@v3
       #   with:
