@@ -28,4 +28,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: swagger-ui
 
+      - name: Checkout
+        uses: actions/checkout@v3
+
 # https://steve-pedersen.github.io/test-swagger-actions
