@@ -10,7 +10,6 @@ jobs:
     permissions:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
-      metadata: read
       contents: read
 
     runs-on: ubuntu-latest
