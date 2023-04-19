@@ -6,10 +6,12 @@ on:
 
 jobs:
   deploy:
-    # # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    # permissions:
-    #   pages: write      # to deploy to Pages
-    #   id-token: write   # to verify the deployment originates from an appropriate source
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+      metadata: read
+      contents: read
 
     runs-on: ubuntu-latest
     steps:
@@ -26,9 +28,24 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: swagger-ui
+          publish_dir: ./swagger-ui
 
-      - name: Checkout
-        uses: actions/checkout@v3
+      # - name: Deploy to GitHub Pages
+      #   uses: actions/deploy-pages@v2
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./swagger-ui
+
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: swagger-ui
+
+      # - name: Upload Pages Artifact
+      #   uses: actions/upload-pages-artifact@v1
+
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v3
 
 # https://steve-pedersen.github.io/test-swagger-actions
